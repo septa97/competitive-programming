@@ -22,5 +22,5 @@ typedef unsigned long long ull;
 typedef pair<int, int> p_ii;
 
 int main() {
-	return 0;
+    return 0;
 }
