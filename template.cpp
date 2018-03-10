@@ -11,6 +11,7 @@
 #include <cmath>
 
 #define MOD 1000000009
+#define INF 1000000000
 #define debug(x) cout << x << " ";
 #define debug_newline(x) cout << x << "\n";
 #define scan(x) do{while((x=getchar())<'0'); for(x-='0'; '0'<=(_=getchar()); x=(x<<3)+(x<<1)+_-'0');}while(0) // for unsigned integral data types
