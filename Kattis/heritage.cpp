@@ -6,7 +6,6 @@
 #include <string>
 #include <algorithm>
 #include <iterator>
-#include <numeric>
 #include <cstdio>
 #include <cstring>
 #include <cmath>
@@ -38,6 +37,38 @@ vector<string> split(string s, string delimiter) {
     return a;
 }
 
+map<pair<string, int>, int> DP;
+string A_s[1005];
+int A_m[1005];
+
+int solve(string s, string name, int total, int n) {
+    pair<string, int> p = make_pair(s, total);
+
+    if (s.size() > name.size()) return 0;
+    else if (s == name) return total;
+    else if (DP.find(p) != DP.end()) return DP[p];
+
+    ll ans = 0;
+
+    for (int i = 0; i < n; i++) {
+        if (name.substr(s.size(), A_s[i].size()) == A_s[i]) {
+            ans += solve(s+A_s[i], name, ((ll)total*A_m[i])%MOD, n);
+        }
+    }
+
+    return DP[p] = ans%MOD;
+}
+
 int main() {
+    int n;
+    string name;
+    cin >> n >> name;
+
+    for (int i = 0; i < n; i++) {
+        cin >> A_s[i] >> A_m[i];
+    }
+
+    cout << solve("", name, 1, n);
+
     return 0;
 }
