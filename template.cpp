@@ -10,7 +10,7 @@
 #include <cstring>
 #include <cmath>
 
-#define MOD 1000000009
+#define MOD 1000000007
 #define INF 1000000000
 #define debug(x) cout << x << " ";
 #define debug_newline(x) cout << x << "\n";
