@@ -6,6 +6,7 @@
 #include <string>
 #include <algorithm>
 #include <iterator>
+#include <numeric>
 #include <cstdio>
 #include <cstring>
 #include <cmath>
